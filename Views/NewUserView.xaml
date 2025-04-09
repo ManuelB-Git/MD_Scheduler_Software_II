@@ -1,0 +1,164 @@
+﻿<Window
+    x:Class="MD_Scheduler_Software_II.Views.NewUserView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MD_Scheduler_Software_II.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
+    Title="New User"
+    Width="800"
+    Height="450"
+    ui:TitleBar.Height="36"
+    ui:WindowHelper.SystemBackdropType="Mica"
+    ui:WindowHelper.UseModernWindowStyle="True"
+    ResizeMode="NoResize"
+    mc:Ignorable="d">
+    <StackPanel>
+        <Label
+            Margin="60,50,0,5"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Content="New User"
+            FontWeight="Bold" />
+        <Border
+            Margin="50,0,50,50"
+            BorderBrush="Black"
+            BorderThickness="1"
+            CornerRadius="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="20,20,20,5"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="Username"
+                    FontWeight="Bold" />
+                <TextBox
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Width="200"
+                    Margin="20,0,20,5"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center" />
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="20,20,20,5"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="Password"
+                    FontWeight="Bold" />
+                <PasswordBox
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Width="200"
+                    Margin="20,0,20,5"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center" />
+
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Margin="20,20,20,5"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="Confirm Password"
+                    FontWeight="Bold" />
+                <PasswordBox
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Width="200"
+                    Margin="20,0,20,5"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center" />
+
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Margin="20,20,20,5"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="First Name"
+                    FontWeight="Bold" />
+                <TextBox
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Width="200"
+                    Margin="20,0,20,5"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center" />
+                <Label
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Margin="20,20,20,5"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="Last Name"
+                    FontWeight="Bold" />
+                <TextBox
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Width="200"
+                    Margin="20,0,20,5"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center" />
+
+                <Label
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Margin="20,20,20,5"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="Company ID"
+                    FontWeight="Bold" />
+                <TextBox
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Width="200"
+                    Margin="20,0,20,5"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center" />
+
+                <Button
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Width="100"
+                    Margin="20,20,20,5"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Content="Create User" />
+                <Button
+                    Grid.Row="6"
+                    Grid.Column="1"
+                    Width="100"
+                    Margin="20,20,20,5"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="Cancel" />
+
+
+
+
+            </Grid>
+
+        </Border>
+    </StackPanel>
+
+</Window>

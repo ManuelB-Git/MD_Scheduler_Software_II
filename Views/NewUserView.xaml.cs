@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace MD_Scheduler_Software_II.Views
 {
     /// <summary>
-    /// Interaction logic for MainView.xaml
+    /// Interaction logic for NewUserView.xaml
     /// </summary>
-    public partial class MainView : Window
+    public partial class NewUserView : Window
     {
-        public MainView()
+        public NewUserView()
         {
             InitializeComponent();
         }
