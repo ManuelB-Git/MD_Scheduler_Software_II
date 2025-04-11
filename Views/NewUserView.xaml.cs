@@ -1,27 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MD_Scheduler_Software_II.ViewModels;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
 
 namespace MD_Scheduler_Software_II.Views
 {
-    /// <summary>
-    /// Interaction logic for NewUserView.xaml
-    /// </summary>
+ 
     public partial class NewUserView : Window
     {
         public NewUserView()
         {
             InitializeComponent();
+        }
+
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is NewUserViewModel vm)
+            {
+                vm.Password = ((PasswordBox)sender).Password;
+
+            }
+        }
+
+        private void ConfirmPasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is NewUserViewModel vm)
+            {
+                vm.ConfirmPassword = ((PasswordBox)sender).Password;
+            }
+        }
+
+        private void PasswordBox_TextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+
         }
     }
 }

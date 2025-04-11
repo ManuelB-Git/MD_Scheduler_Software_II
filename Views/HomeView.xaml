@@ -1,0 +1,122 @@
+﻿<UserControl
+    x:Class="MD_Scheduler_Software_II.Views.HomeView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MD_Scheduler_Software_II.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    HorizontalAlignment="Stretch"
+    VerticalAlignment="Stretch"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--  Title  -->
+        <TextBlock
+            Margin="0,0,0,20"
+            HorizontalAlignment="Center"
+            FontSize="24"
+            FontWeight="Bold"
+            Text="Welcome to the Scheduler Dashboard" />
+
+        <!--  Summary Cards  -->
+        <StackPanel
+            Grid.Row="1"
+            Margin="0,0,0,20"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal">
+            <Border
+                Width="180"
+                Margin="10"
+                Padding="20"
+                Background="#FFCCE5FF"
+                CornerRadius="10">
+                <StackPanel>
+                    <TextBlock
+                        FontWeight="SemiBold"
+                        Foreground="#003366"
+                        Text="Total Customers" />
+                    <TextBlock
+                        x:Name="TotalCustomersText"
+                        HorizontalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Foreground="#003366"
+                        Text="0" />
+                </StackPanel>
+            </Border>
+            <Border
+                Width="180"
+                Margin="10"
+                Padding="20"
+                Background="#FFDFFFD6"
+                CornerRadius="10">
+                <StackPanel>
+                    <TextBlock
+                        FontWeight="SemiBold"
+                        Foreground="#004400"
+                        Text="Total Appointments" />
+                    <TextBlock
+                        x:Name="TotalAppointmentsText"
+                        HorizontalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Foreground="#004400"
+                        Text="0" />
+                </StackPanel>
+            </Border>
+            <Border
+                Width="180"
+                Margin="10"
+                Padding="20"
+                Background="#FFFFE0CC"
+                CornerRadius="10">
+                <StackPanel>
+                    <TextBlock Foreground="#5C1A00" FontWeight="SemiBold" Text="Upcoming Today" />
+                    <TextBlock
+                        Foreground="#5C1A00"
+                        x:Name="UpcomingTodayText"
+                        HorizontalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Text="0" />
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+        <!--  Today’s Appointments  -->
+        <StackPanel Grid.Row="2">
+            <TextBlock
+                Margin="0,0,0,10"
+                FontSize="18"
+                FontWeight="SemiBold"
+                Text="Today's Appointments" />
+            <DataGrid
+                x:Name="TodaysAppointmentsGrid"
+                Height="200"
+                AutoGenerateColumns="False"
+                IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding StartDateTime}"
+                        Header="Time" />
+                    <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding CustomerName}"
+                        Header="Customer" />
+                    <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding Type}"
+                        Header="Type" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</UserControl>

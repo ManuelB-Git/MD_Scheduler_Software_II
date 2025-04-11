@@ -10,14 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace MD_Scheduler_Software_II.Views
 {
-  
-    public partial class MainView : Window
+    /// <summary>
+    /// Interaction logic for CustomersView.xaml
+    /// </summary>
+    public partial class CustomersView : UserControl
     {
-        public MainView()
+        public CustomersView()
         {
             InitializeComponent();
         }

@@ -6,14 +6,20 @@
     xmlns:local="clr-namespace:MD_Scheduler_Software_II.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
+    xmlns:vm="clr-namespace:MD_Scheduler_Software_II.ViewModels"
     Title="New User"
-    Width="800"
-    Height="450"
+    Width="825"
+    Height="550"
     ui:TitleBar.Height="36"
     ui:WindowHelper.SystemBackdropType="Mica"
     ui:WindowHelper.UseModernWindowStyle="True"
     ResizeMode="NoResize"
     mc:Ignorable="d">
+
+    <Window.DataContext>
+        <vm:NewUserViewModel />
+    </Window.DataContext>
+
     <StackPanel>
         <Label
             Margin="60,50,0,5"
@@ -35,10 +41,15 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
+
                 </Grid.ColumnDefinitions>
 
                 <Label
@@ -50,110 +61,175 @@
                     Content="Username"
                     FontWeight="Bold" />
                 <TextBox
+                    x:Name="UsernameTextBox"
                     Grid.Row="1"
                     Grid.Column="0"
-                    Width="200"
+                    Grid.ColumnSpan="2"
                     Margin="20,0,20,5"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center" />
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    Text="{Binding Username, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    FontSize="12"
+                    Foreground="Red"
+                    Text="{Binding (Validation.Errors)[0].ErrorContent, ElementName=UsernameTextBox}" />
 
                 <Label
                     Grid.Row="0"
-                    Grid.Column="1"
-                    Margin="20,20,20,5"
+                    Grid.Column="2"
+                    Margin="20,20,0,5"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
                     Content="Password"
                     FontWeight="Bold" />
                 <PasswordBox
+                    x:Name="PasswordBox"
                     Grid.Row="1"
-                    Grid.Column="1"
-                    Width="200"
+                    Grid.Column="2"
+                    Grid.ColumnSpan="2"
                     Margin="20,0,20,5"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center" />
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    PasswordChanged="PasswordBox_PasswordChanged" />
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    FontSize="12"
+                    Foreground="Red"
+                    Text="{Binding PasswordMatch}" />
 
                 <Label
                     Grid.Row="2"
                     Grid.Column="0"
-                    Margin="20,20,20,5"
+                    Margin="20,20,0,5"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
                     Content="Confirm Password"
                     FontWeight="Bold" />
                 <PasswordBox
-                    Grid.Row="3"
+                    x:Name="ConfirmPasswordBox"
+                    Grid.Row="2"
+                    Grid.RowSpan="2"
                     Grid.Column="0"
-                    Width="200"
-                    Margin="20,0,20,5"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center" />
+                    Grid.ColumnSpan="2"
+                    Margin="20,43,20,0"
+                    VerticalAlignment="Top"
+                    PasswordChanged="ConfirmPasswordBox_PasswordChanged" />
+                <TextBlock
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    FontSize="12"
+                    Foreground="Red"
+                    Text="{Binding PasswordMatch}" />
 
                 <Label
                     Grid.Row="2"
-                    Grid.Column="1"
-                    Margin="20,20,20,5"
+                    Grid.Column="2"
+                    Margin="20,0,0,5"
                     HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
+                    VerticalAlignment="Bottom"
                     Content="First Name"
                     FontWeight="Bold" />
                 <TextBox
+                    x:Name="FirstNameTextBox"
                     Grid.Row="3"
-                    Grid.Column="1"
-                    Width="200"
+                    Grid.Column="2"
+                    Grid.ColumnSpan="2"
                     Margin="20,0,20,5"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center" />
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+
+                <TextBlock
+                    Grid.Row="2"
+                    Grid.Column="3"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    FontSize="12"
+                    Foreground="Red"
+                    Text="{Binding (Validation.Errors)[0].ErrorContent, ElementName=FirstNameTextBox}" />
                 <Label
                     Grid.Row="4"
                     Grid.Column="0"
-                    Margin="20,20,20,5"
+                    Margin="20,20,0,5"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
                     Content="Last Name"
                     FontWeight="Bold" />
                 <TextBox
+                    x:Name="LastNameTextBox"
                     Grid.Row="5"
                     Grid.Column="0"
-                    Width="200"
+                    Grid.ColumnSpan="2"
                     Margin="20,0,20,5"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center" />
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+                <TextBlock
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    FontSize="12"
+                    Foreground="Red"
+                    Text="{Binding (Validation.Errors)[0].ErrorContent, ElementName=LastNameTextBox}" />
+
 
                 <Label
                     Grid.Row="4"
-                    Grid.Column="1"
-                    Margin="20,20,20,5"
+                    Grid.Column="2"
+                    Margin="20,20,0,5"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
                     Content="Company ID"
                     FontWeight="Bold" />
                 <TextBox
+                    x:Name="CompanyIdTextBox"
                     Grid.Row="5"
-                    Grid.Column="1"
-                    Width="200"
+                    Grid.Column="2"
+                    Grid.ColumnSpan="2"
                     Margin="20,0,20,5"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center" />
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    Text="{Binding CompanyId, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+
+                <TextBlock
+                    Grid.Row="4"
+                    Grid.Column="3"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    FontSize="12"
+                    Foreground="Red"
+                    Text="{Binding (Validation.Errors)[0].ErrorContent, ElementName=CompanyIdTextBox}" />
 
                 <Button
                     Grid.Row="6"
                     Grid.Column="0"
+                    Grid.ColumnSpan="2"
                     Width="100"
                     Margin="20,20,20,5"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Center"
+                    Command="{Binding SaveUserCommand}"
                     Content="Create User" />
                 <Button
                     Grid.Row="6"
-                    Grid.Column="1"
+                    Grid.Column="2"
                     Width="100"
                     Margin="20,20,20,5"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
+                    Command="{Binding CancelWindowCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
                     Content="Cancel" />
-
-
 
 
             </Grid>

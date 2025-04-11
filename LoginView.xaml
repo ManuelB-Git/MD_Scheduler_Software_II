@@ -52,6 +52,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -120,6 +121,18 @@
                     VerticalAlignment="Center"
                     Command="{Binding NavigateToLoginCommand}"
                     Content="Login" />
+
+                <Label
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Margin="10,0,10,20"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    Content="{Binding LoginErrorMessage}"
+                    FontSize="10"
+                    Foreground="Red" />
+
             </Grid>
         </Border>
     </Grid>
